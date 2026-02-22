@@ -1,44 +1,67 @@
-﻿using System; // Allows us to use basic system functions like Console
+﻿using System; // Allows use of Console and basic system functions
 
 class Program
 {
     static void Main()
     {
-        // Print the school name
-        Console.WriteLine("Academy of Learning Career College");
+        // 1️⃣ Multiply input by 50
 
-        // Print the report title
-        Console.WriteLine("Student Daily Report.");
+        Console.WriteLine("Please enter a number to multiply by 50:");
+        
+        // Using long to allow very large numbers (greater than 10,000,000)
+        long number1 = Convert.ToInt64(Console.ReadLine());
 
-        // Ask for student's name and store it as a string
-        Console.WriteLine("What is your name?");
-        string studentName = Console.ReadLine();
+        long multiplyResult = number1 * 50;
 
-        // Ask what course they are on and store it as a string
-        Console.WriteLine("What course are you on?");
-        string courseName = Console.ReadLine();
+        Console.WriteLine("Result after multiplying by 50: " + multiplyResult);
 
-        // Ask for page number and convert input to integer
-        Console.WriteLine("What page number?");
-        int pageNumber = Convert.ToInt32(Console.ReadLine());
 
-        // Ask if student needs help (true/false) and convert to boolean
-        Console.WriteLine("Do you need help with anything? Please answer \"true\" or \"false\".");
-        bool needHelp = Convert.ToBoolean(Console.ReadLine());
 
-        // Ask about positive experiences and store response as string
-        Console.WriteLine("Were there any positive experiences you'd like to share? Please give specifics.");
-        string positiveExperience = Console.ReadLine();
+        // 2️⃣ Add 25 to input
 
-        // Ask for additional feedback and store response as string
-        Console.WriteLine("Is there any other feedback you'd like to provide? Please be specific.");
-        string additionalFeedback = Console.ReadLine();
+        Console.WriteLine("Please enter a number to add 25 to:");
 
-        // Ask how many hours studied and convert to decimal (could be 2.5 hours)
-        Console.WriteLine("How many hours did you study today?");
-        decimal hoursStudied = Convert.ToDecimal(Console.ReadLine());
+        long number2 = Convert.ToInt64(Console.ReadLine());
 
-        // Final thank-you message
-        Console.WriteLine("Thank you for your answers. An Instructor will respond shortly. Have a great day!");
+        long addResult = number2 + 25;
+
+        Console.WriteLine("Result after adding 25: " + addResult);
+
+
+
+        // 3️⃣ Divide input by 12.5
+
+        Console.WriteLine("Please enter a number to divide by 12.5:");
+
+        // Using decimal because 12.5 is a decimal value
+        decimal number3 = Convert.ToDecimal(Console.ReadLine());
+
+        decimal divideResult = number3 / 12.5m;
+
+        Console.WriteLine("Result after dividing by 12.5: " + divideResult);
+
+
+
+        // 4️⃣ Check if input is greater than 50
+
+        Console.WriteLine("Please enter a number to check if it is greater than 50:");
+
+        long number4 = Convert.ToInt64(Console.ReadLine());
+
+        bool isGreater = number4 > 50;
+
+        Console.WriteLine("Is the number greater than 50? " + isGreater);
+
+
+
+        // 5️⃣ Divide input by 7 and print remainder
+
+        Console.WriteLine("Please enter a number to divide by 7 and get the remainder:");
+
+        long number5 = Convert.ToInt64(Console.ReadLine());
+
+        long remainder = number5 % 7; // % gives remainder
+
+        Console.WriteLine("The remainder after dividing by 7 is: " + remainder);
     }
 }
