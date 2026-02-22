@@ -1,55 +1,55 @@
-﻿using System; // Allows us to use Console and other basic system features
+﻿using System; // Allows use of Console and basic system functions
 
 class Program
 {
     static void Main()
     {
-        // Print program title
-        Console.WriteLine("Anonymous Income Comparison Program");
+        // Display welcome message
+        Console.WriteLine("Welcome to Package Express. Please follow the instructions below.");
 
-        // ---------- PERSON 1 ----------
-        Console.WriteLine("Person 1");
+        // Ask for package weight
+        Console.WriteLine("Please enter the package weight:");
+        decimal weight = Convert.ToDecimal(Console.ReadLine());
 
-        // Ask for Person 1 hourly rate
-        Console.WriteLine("Hourly Rate?");
-        decimal person1HourlyRate = Convert.ToDecimal(Console.ReadLine());
+        // If weight is greater than 50, stop program
+        if (weight > 50)
+        {
+            Console.WriteLine("Package too heavy to be shipped via Package Express. Have a good day.");
+            return; // Ends the program immediately
+        }
 
-        // Ask for Person 1 hours worked per week
-        Console.WriteLine("Hours worked per week?");
-        decimal person1HoursPerWeek = Convert.ToDecimal(Console.ReadLine());
+        // Ask for package width
+        Console.WriteLine("Please enter the package width:");
+        decimal width = Convert.ToDecimal(Console.ReadLine());
 
-        // Calculate annual salary (Hourly Rate × Hours per week × 52 weeks)
-        decimal person1AnnualSalary = person1HourlyRate * person1HoursPerWeek * 52;
+        // Ask for package height
+        Console.WriteLine("Please enter the package height:");
+        decimal height = Convert.ToDecimal(Console.ReadLine());
 
-        // ---------- PERSON 2 ----------
-        Console.WriteLine("Person 2");
+        // Ask for package length
+        Console.WriteLine("Please enter the package length:");
+        decimal length = Convert.ToDecimal(Console.ReadLine());
 
-        // Ask for Person 2 hourly rate
-        Console.WriteLine("Hourly Rate?");
-        decimal person2HourlyRate = Convert.ToDecimal(Console.ReadLine());
+        // Check if total dimensions exceed 50
+        decimal totalDimensions = width + height + length;
 
-        // Ask for Person 2 hours worked per week
-        Console.WriteLine("Hours worked per week?");
-        decimal person2HoursPerWeek = Convert.ToDecimal(Console.ReadLine());
+        if (totalDimensions > 50)
+        {
+            Console.WriteLine("Package too big to be shipped via Package Express.");
+            return; // Ends the program immediately
+        }
 
-        // Calculate annual salary
-        decimal person2AnnualSalary = person2HourlyRate * person2HoursPerWeek * 52;
+        // Calculate shipping quote
+        // Multiply dimensions together
+        decimal volume = width * height * length;
 
-        // ---------- OUTPUT RESULTS ----------
+        // Multiply by weight and divide by 100
+        decimal quote = (volume * weight) / 100;
 
-        // Print Person 1 annual salary
-        Console.WriteLine("Annual salary of Person 1:");
-        Console.WriteLine(person1AnnualSalary);
+        // Display formatted dollar amount with 2 decimal places
+        Console.WriteLine("Your estimated total for shipping this package is: $" + quote.ToString("0.00"));
 
-        // Print Person 2 annual salary
-        Console.WriteLine("Annual salary of Person 2:");
-        Console.WriteLine(person2AnnualSalary);
-
-        // Compare salaries using greater than operator
-        bool person1MakesMore = person1AnnualSalary > person2AnnualSalary;
-
-        // Print comparison result
-        Console.WriteLine("Person 1 makes more money than Person 2");
-        Console.WriteLine(person1MakesMore);
+        // Final message
+        Console.WriteLine("Thank you!");
     }
 }
